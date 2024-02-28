@@ -45,7 +45,3 @@ SpeaklishClient is a Python class designed to interact with the Speaklish API fo
 
 ## Support
 For any questions, issues, or feedback, please contact [bob@speaklish.uz].
-
----
-
-Feel free to customize the README further based on your project's needs and guidelines!
