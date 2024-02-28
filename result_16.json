@@ -1,0 +1,10 @@
+{
+    "id": 16,
+    "student_id": 7777,
+    "result": "~~~~~ FINAL OUTPUT ~~~~~\nFeedback: The candidate demonstrates a good level of fluency, though there are occasional hesitations and repetitions. Vocabulary is varied, but there is room for more sophisticated language and collocations. Grammar is generally accurate with minor errors. Cohesive devices are used effectively, but transitions could be smoother in some instances.\n\nBand score: 7.0\nFluency: 7.0\nVocabulary: 7.0\nGrammar: 7.0\nPronunciation: 7.0 (average of other scores)\n\nSpecific topic-words used by candidate (worth-to-mention):\n- mindfulness\n- critical thinking\n- mental fatigue\n- adrenaline rush\n- strategic thinking\n- mental disease\n- work-life balance\n- e-sports\n\nSuggested less used topic-related words, idioms or collocations:\n- hone concentration (instead of \"improve the concentration\")\n- peak performance (instead of \"boost your concentration and performance\")\n- digital distractions (more specific term for \"distractions\")\n- engrossed in (instead of \"focused during\")\n- camaraderie (instead of \"convergence\")\n- rejuvenate (instead of \"recharge\")\n- plethora of activities (instead of \"wider array of activities\")\n- time constraints (instead of \"struggle to find enough time\")\n- extracurricular pursuits (instead of \"leisure activities\")\n- foster a sense of community (instead of \"opportunities to social interaction\")\n- cutting-edge trends (instead of \"significant trend\")",
+    "stop_reason": null,
+    "is_test": true,
+    "created_at": "2024-02-28T21:34:52.523555+05:00",
+    "updated_at": "2024-02-28T21:35:37.342647+05:00",
+    "finished_at": "2024-02-28T21:35:37.342413+05:00"
+}

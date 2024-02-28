@@ -32,10 +32,10 @@ class SpeaklishClient:
         endpoint = "session-create?is_test=true&user_id=7777" # by your wish
         return self._request("GET", endpoint)
 
-    def send_part_answers(self, endpoint, questions):
+    def send_part_answers(self, endpoint, questions, part=1 ):
         for question in questions:
             qs_id = question.get('id')
-            audio_file = self.base_dir / 'media' / 'tests' / f'audio_{endpoint}_{qs_id}.ogg'
+            audio_file = self.base_dir / 'media' / 'tests' / f'audio_part{part}_{qs_id}.ogg' # audio_part1_
             assert audio_file.exists()
             files = {'voice_audio': open(audio_file, 'rb')}
             payload = {'question_id': qs_id, 'session_id': self.session_id}
@@ -43,11 +43,11 @@ class SpeaklishClient:
             print('qs_id', qs_id, response)
 
     def wait_for_feedback(self):
-        url = f"{self.url_base}session-feedback/{self.session_id}"
+        url = f"session-feedback/{self.session_id}"
         response = self._request("GET", url)
 
 
-        while response.status_code != 200:
+        while response.get('result') is None :
             response = self._request("GET", url)
             pprint(response)
             time.sleep(10)
@@ -64,7 +64,6 @@ class SpeaklishClient:
         self.session_id = test_session['session_id']
 
         self.send_part_answers("part-1-create/", test_session['part1_questions'])
-        self.send_part_answers("part-3-create/", test_session['part3_questions'])
 
         part2_question = test_session['part2_question']
         qs_id = part2_question['id']
@@ -75,8 +74,10 @@ class SpeaklishClient:
         response = self._request("POST", "part-2-create/", payload, files)
         print('qs_id', qs_id, response)
 
+        self.send_part_answers("part-3-create/", test_session['part3_questions'], 3)
+       
         print('waiting for feedback for 30 seconds...')
-        self.wait_for_feedback(session_id)
+        self.wait_for_feedback()
 
 if __name__ == "__main__":
     client = SpeaklishClient()
