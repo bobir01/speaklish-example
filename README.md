@@ -10,6 +10,7 @@ SpeaklishClient is a Python class designed to interact with the Speaklish API fo
 ## Prerequisites
 - Python 3.x
 - `requests` library (`pip install requests`)
+- `python-dotenv` library for env files
 - `.env` file containing the necessary environment variables
 
 ## Usage
